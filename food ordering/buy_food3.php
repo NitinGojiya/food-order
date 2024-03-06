@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       *{
+        *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -18,8 +20,8 @@
     outline: none;
 }
 body{
-    color: #ffffff;
-    background: black;
+    color: #fff;
+    background-color: #000;
 }
 header{
     position: fixed;
@@ -56,7 +58,6 @@ p{
 section{
     padding: 120px 19% 100px;
 }
-
 span{
     color: red;
 }
@@ -97,7 +98,9 @@ header.sticky{
     background-color: red;
 }
 
+      
         .sub {
+           
             height: auto;
             display: flex;
             flex-wrap: wrap;
@@ -119,7 +122,6 @@ header.sticky{
             margin: 20px;
             border-radius: 20px;
         }
-
         img{
             border-radius: 20px;
         }
@@ -156,7 +158,8 @@ header.sticky{
                 <li><button class="btn-header" name="login">Login</button></li>
             </ul>
         </header>
-        <section class="buy">
+        
+    <section class="buy">
     <div class="main" id="food">
         <div class="sub">
         <?php
@@ -172,21 +175,37 @@ header.sticky{
 
      
     ?>
-            <div class="food">
-                <div><img src="<?php echo $row['photo']; ?>" height="100px"></div>
+          </form>  <div class="food">
+                <form action="in_cart.php" method="post">
+                <div>
+                    <img src="<?php echo $row['photo']; ?>" height="100px">
+                    
+            </div>
                 <div>
                   <?php echo $row['name'];?>
+                 
                 </div>
                 <div class="quantity">
                 <input type="number" id="quantity" name="quantity" min="1" max="10" step="1" value="1">
+                
+                <input type="text" value="<?php echo $row['name'] ?>"  hidden name="name">
+                <input type="text" value="<?php echo $row['price'] ?>" hidden name="price">
                 </div>
+              
                 <div>
                 <?php echo $row['price'];?>
+              
                 </div>
                 <div>
-                    <input type="submit" value="buy" name="buy" class="btn2">
+                
+                    <button class="btn2"  name="buy">
+                    buyy
+    
+                    </button>
                 </div>
             </div>
+           
+            </form>
             <?php }?>
 
            
@@ -196,3 +215,4 @@ header.sticky{
 </body>
 
 </html>
+

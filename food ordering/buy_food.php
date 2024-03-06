@@ -173,21 +173,37 @@ header.sticky{
 
      
     ?>
-            <div class="food">
-                <div><img src="<?php echo $row['photo']; ?>" height="100px"></div>
+          </form>  <div class="food">
+                <form action="in_cart.php" method="post">
+                <div>
+                    <img src="<?php echo $row['photo']; ?>" height="100px">
+                    
+            </div>
                 <div>
                   <?php echo $row['name'];?>
+                 
                 </div>
                 <div class="quantity">
                 <input type="number" id="quantity" name="quantity" min="1" max="10" step="1" value="1">
+                
+                <input type="text" value="<?php echo $row['name'] ?>"  hidden name="name">
+                <input type="text" value="<?php echo $row['price'] ?>" hidden name="price">
                 </div>
+              
                 <div>
                 <?php echo $row['price'];?>
+              
                 </div>
                 <div>
-                    <input class="btn2" type="submit" value="buy" name="buy">
+                
+                    <button class="btn2"  name="buy">
+                    buyy
+    
+                    </button>
                 </div>
             </div>
+           
+            </form>
             <?php }?>
 
            
@@ -197,3 +213,4 @@ header.sticky{
 </body>
 
 </html>
+

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 05, 2024 at 12:34 PM
--- Server version: 8.0.31
--- PHP Version: 8.0.26
+-- Generation Time: Mar 06, 2024 at 06:43 PM
+-- Server version: 8.2.0
+-- PHP Version: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,16 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `burger`
+-- Table structure for table `cart`
 --
 
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `name` varchar(250) NOT NULL,
+  `qty` int NOT NULL,
+  `price` double NOT NULL,
+  `subtotal` int NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE IF NOT EXISTS `burger` (
-  `id` int NOT NULL,
-  `photo` varchar(250) NOT NULL,
-  `name` text NOT NULL,
-  `price` int NOT NULL
-) 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`name`, `qty`, `price`, `subtotal`) VALUES
+('burger', 1, 199, 199),
+('burger', 3, 199, 597),
+('pizaa', 3, 199, 597),
+('Sendvich', 3, 199, 597),
+('burger', 1, 199, 199),
+('burger', 5, 199, 995);
 
 -- --------------------------------------------------------
 
@@ -48,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `food` (
   `name` text NOT NULL,
   `price` int NOT NULL,
   UNIQUE KEY `id` (`id`)
-)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `food`
@@ -80,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `name` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) 
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -98,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -112,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) 
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
