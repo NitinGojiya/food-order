@@ -117,7 +117,7 @@ header.sticky{
 
         .food {
             background-color: #fff;
-            gap: 20px;
+            gap: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -131,7 +131,20 @@ header.sticky{
         img{
             border-radius: 20px;
         }
-        
+        #quantity {
+    width: 100px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: border-color 0.3s;
+}
+
+#quantity:focus {
+    border-color: #007bff;
+    outline: none;
+}
     </style>
 	
 </head>
@@ -145,10 +158,10 @@ header.sticky{
                 <li><p>Food<span>F</span>amily</p></li>
                 <li><a href="home.php">Home</a></li>
                 <li><a href="#food">Food</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><button class="btn-header" name="login">Login</button></li>
-                <li><button class="btn-header" name="signup">Sign up</button></li>
             </ul>
         </header>
         <section class="buy">
@@ -171,6 +184,9 @@ header.sticky{
                 <div><img src="<?php echo $row['photo']; ?>" height="100px"></div>
                 <div>
                   <?php echo $row['name'];?>
+                </div>
+                <div class="quantity">
+                <input type="number" id="quantity" name="quantity" min="1" max="10" step="1" value="1">
                 </div>
                 <div>
                 <?php echo $row['price'];?>

@@ -325,8 +325,8 @@ span{
                 <li><a href="#food">Food</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><button class="btn-header" name="login">Login</button></li>
-                <li><button class="btn-header" name="signup">Sign up</button></li>
             </ul>
         </header>
 
