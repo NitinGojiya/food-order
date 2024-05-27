@@ -62,7 +62,21 @@
         .navlist a:hover {
             color: red;
         }
-
+        .btn-header{
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 25px;
+    font-weight: bolder;
+    border-radius: 20px;
+    transition: transform .4s;
+    height: 50px;
+    width: 150px;
+}
+.btn-header:hover{
+    background-color: red;
+}
         section {
             padding: 0px 5% 50px;
         }
@@ -77,27 +91,30 @@
             font-size: 5rem;
             font-weight: 800;
             margin-bottom: 10px;
-            color: #000;
+            color: red;
             text-align: center;
             margin-top: 110px;
         }
 
         .row-main {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-            align-items: center;
-            margin-top: 3rem;
+            display: flex;
             color: #000;
-            border-top: 2px solid #000;
+            border-top: 2px solid lightblue;
             text-align: center;
+            align-items: center;
+            gap: 250px;
         }
 
         .row-main p {
-            color: black;
+            display: flex;
+            justify-content: center;
+            color: #fff;
             font-size: 20px;
             line-height: 20px;
-            margin-bottom: 1rem;
-            padding: 10px 0 20px 0;
+            margin-bottom: .5rem;
+            height: 50px;
+            text-align: center;
+            align-items: center;
         }
 
         .row-main_1 {
@@ -105,47 +122,20 @@
             color: #000;
             border-top: 2px solid lightblue;
             text-align: center;
-            margin-left: 20px;
-            padding: 15px 0 15px 0;
             align-items: center;
+            gap: 300px;
         }
 
         .row-main_1 p {
+            display: flex;
+            justify-content: center;
+            color: #fff;
             font-size: 20px;
-            line-height: 10px;
+            line-height: 20px;
+            margin-bottom: .5rem;
+            height: 50px;
             text-align: center;
-        }
-
-        .sub-row1 {
-            width: 270px;
-        }
-
-        .sub-row2 {
-            width: 40px;
-            margin-left: 190px;
-        }
-
-        .sub-row3 {
-            width: 80px;
-            margin-left: 290px;
-        }
-
-        .sub-row4 {
-            width: 270px;
-            margin-left: 180px;
-        }
-
-        .sub-row5 {
-            border: #000 0.5px solid;
-            border-radius: 5px;
-            width: 30px;
-        }
-
-        .sub-row5 a {
-            font-size: 20px;
-            color: #000;
-            background-color: white;
-            font-weight: 600;
+            align-items: center;
         }
     </style>
 </head>
@@ -170,7 +160,7 @@
         </header>
 
         <div class="heading">
-            You are About to Wine
+            You are About to your food
         </div>
 
         <div class="row-main">
@@ -204,13 +194,13 @@
                 <div class="sub-row1">
                     <p><?php echo $row["name"]; ?></p>
                 </div>
-                <div class="sub-row2">
+                <div class="sub-row1">
                     <p><?php echo $row["qty"]; ?></p>
                 </div>
-                <div class="sub-row3">
+                <div class="sub-row1">
                     <p><?php echo $row["price"] ; ?></p>
                 </div>
-                <div class="sub-row4">
+                <div class="sub-row1">
                     <p><?php echo $row["subtotal"]; ?></p>
                 </div>
             </div>
